@@ -49,7 +49,14 @@ export default class Room extends Component {
 
     this.socket.on('user-connected', name => {
       this.setState({ 
-        messages: this.state.messages.concat([`${name} connected`]) 
+        messages: this.state.messages.concat([`${name} entrou na sala`]) 
+      })
+      console.log(`${name} connected`)
+    })
+
+    this.socket.on('user-disconnected', name => {
+      this.setState({ 
+        messages: this.state.messages.concat([`${name} saiu da sala`]) 
       })
       console.log(`${name} connected`)
     })
