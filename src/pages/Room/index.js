@@ -11,7 +11,7 @@ export default class Room extends Component {
 
   constructor(){
     super()
-    this.socket = socketIOClient('https://focalchatbackend.herokuapp.com/');
+    this.socket = socketIOClient('https://focalchatsocket.herokuapp.com/');
     this.mesRef = React.createRef();
   }
 
