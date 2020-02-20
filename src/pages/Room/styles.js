@@ -11,7 +11,6 @@ export const Container = styled.div`
   #chat {
     height: 100%;
     width: 80%;
-    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
