@@ -1,7 +1,33 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 60em) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+
   .room-card{
+    margin: 10px;
     width: 300px;
     height: 350px;
     background-color: #ffffff;
@@ -21,7 +47,6 @@ export const Container = styled.div`
     background-size:cover; 
     background-position:center center; 
     background-repeat:no-repeat; 
-    background-image:url('https://catracalivre.com.br/wp-content/thumbnails/LxuSOj5zH7YOig6uphmklFaCYgw=/wp-content/uploads/2019/03/bolsonaro-eua.jpeg');
   }
 
   .opacity {

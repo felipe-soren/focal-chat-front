@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100%;
-  width: 100%;
+  display: flex;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  justify-content: center;
 
   #chat {
     height: 100%;
+    width: 80%;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +47,11 @@ export const Container = styled.div`
     padding: 20px;
     overflow: scroll;
     scroll-behavior: auto;
+  }
+
+  .messages, input, button {
+    max-width: 90%;
+    max-height: 90%;
   }
 
   .messages::-webkit-scrollbar {

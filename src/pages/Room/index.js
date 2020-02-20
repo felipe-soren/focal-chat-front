@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import socketIOClient from "socket.io-client";
+import { withRouter } from "react-router-dom";
 
 import { Container } from './styles';
 
@@ -18,7 +19,7 @@ export default class Room extends Component {
   handleFormSubmit(e) {
     e.preventDefault()
     console.log(this.props.match.params.name, this.state.messageInput)
-    this.socket.emit('send-chat-message', this.props.match.params.name, this.state.messageInput)
+    this.socket.emit('send-chat-message', this.props.location.state.roomId, this.state.messageInput)
     this.setState({ 
       messages: this.state.messages.concat([`Você: ${this.state.messageInput}`]) 
     })
@@ -30,8 +31,12 @@ export default class Room extends Component {
 	};
   
   componentWillMount() {
-    this.socket.emit('room-created', this.props.match.params.name)
-    this.socket.emit('new-user', this.props.match.params.name, this.props.location.state.userName)
+    if (this.props.location.state === undefined) {
+      this.props.history.push('/');
+      return;
+    }
+    this.socket.emit('room-created', this.props.location.state.roomId)
+    this.socket.emit('new-user', this.props.location.state.roomId, this.props.location.state.userName)
   }
 
   componentDidUpdate() {
@@ -51,14 +56,12 @@ export default class Room extends Component {
       this.setState({ 
         messages: this.state.messages.concat([`${name} entrou na sala`]) 
       })
-      console.log(`${name} connected`)
     })
 
     this.socket.on('user-disconnected', name => {
       this.setState({ 
         messages: this.state.messages.concat([`${name} saiu da sala`]) 
       })
-      console.log(`${name} connected`)
     })
   }
 

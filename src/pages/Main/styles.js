@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display:flex;
+  display: flex;
   width: 100%;
   justify-content: center;
 
@@ -9,6 +9,7 @@ export const Container = styled.div`
     display: flex;
     padding: 50px;
     width: 80%;
+    justify-content: center;
   }
 
   .modal-bg{
