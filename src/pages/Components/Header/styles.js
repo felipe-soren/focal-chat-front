@@ -6,7 +6,7 @@ export const Container = styled.header`
   background: #262626;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.10);
   -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.10);
   box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.10);

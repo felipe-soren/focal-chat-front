@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 
 import { Container } from "./styles";
@@ -10,6 +10,7 @@ const RoomCard = ({ Rooms }) => {
   const [roomName, setRoomName] = useState("");
   const [roomId, setRoomId] = useState("");
   const history = useHistory();
+  const inputEl = useRef(null);
 
   function goToRoom(e) {
     history.push({
@@ -18,10 +19,11 @@ const RoomCard = ({ Rooms }) => {
     });
   }
 
-  function handleCardClick(room, roomId) {
-    setShowModal(true);
+  async function handleCardClick(room, roomId) {
+    await setShowModal(true);
     setRoomName(room);
     setRoomId(roomId);
+    inputEl.current.focus();
   }
 
   return (
@@ -37,7 +39,9 @@ const RoomCard = ({ Rooms }) => {
             </div>
             <form onSubmit={e => goToRoom(e)}>
               <h3>Digite seu nome para entrar no chat</h3>
-              <input type="text" onChange={e => setUserName(e.target.value)} />
+              <input type="text" onChange={e => setUserName(e.target.value)}
+              ref={inputEl}
+              />
             </form>
             <div className="modal-footer">
               <button className="btn" onClick={() => goToRoom()}>
@@ -46,11 +50,9 @@ const RoomCard = ({ Rooms }) => {
             </div>
           </div>
         </div>
-      ) : (
-        ""
-      )}
-              <div class="grid-container">
-      {Rooms.map(room => (
+      ) : null}
+      <div class="grid-container">
+        {Rooms.map(room => (
           <div
             className="room-card"
             key={room.id}
@@ -68,7 +70,7 @@ const RoomCard = ({ Rooms }) => {
               <p className="decription">{room.description}</p>
             </div>
           </div>
-      ))}
+        ))}
       </div>
     </Container>
   );

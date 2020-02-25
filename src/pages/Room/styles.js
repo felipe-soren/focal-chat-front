@@ -66,5 +66,7 @@ export const Container = styled.div`
   li {
     list-style: none;
     padding: 5px;
+    width: 100%;
+    word-break: break-all;
   }
 `;
