@@ -18,35 +18,39 @@ export const Container = styled.div`
   }
 
   input {
-    width: 600px;
+    flex: 1;
     border: 1px solid #ddd;
     min-height: 50px;
     padding: 0 20px;
     font-size: 14px;
   }
 
-  button {
-    width: 600px;
-    height: 50px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #13AA52;
-    text-align: center;
-    line-height: 50px;
-    font-weight: bold;
-    margin-top: 10px;
+  .btn {
     cursor: pointer;
-    border-radius: 4px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #13AA52;
+    color: #fff;
     border: 1px solid #e0e0e0;
-    font-size: 16px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-    transform: translateY(0);
-    transition: transform 150ms,box-shadow 150ms;
+    margin-left: 5px;
+  }
+
+  .send-section {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
   }
 
   .messages {
-    width: 600px;
-    height: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 60%;
     margin: 20px 0;
     border: 1px solid #ddd;
     padding: 20px;
@@ -54,19 +58,38 @@ export const Container = styled.div`
     scroll-behavior: auto;
   }
 
-  .messages, input, button {
+  @media only screen and (max-width: 600px) {
+  .messages, input {
     max-width: 90%;
     max-height: 90%;
   }
+}
 
   .messages::-webkit-scrollbar {
-  display: none;
-}
+    display: none;
+  }
 
   li {
     list-style: none;
     padding: 5px;
     width: 100%;
+  }
+
+  .wraper {
+    width: 0px;
+  }
+  
+  .message-container {
+    padding: 15px;
+    display: inline-block;
+    max-width: 80%;
+    background-color: green;
     word-break: break-all;
+    border-radius:7px;
+    background-color: #ededed;
+  }
+
+  span {
+    font-weight: bold;
   }
 `;
