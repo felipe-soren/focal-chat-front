@@ -44,6 +44,10 @@ export default class Room extends Component {
     this.mesRef.current.scrollTop = this.mesRef.current.scrollHeight;
   };
 
+  componentWillUnmount() {
+    this.socket.disconnect();
+  }
+
   componentWillMount() {
     if (this.props.location.state === undefined) {
       this.props.history.push("/");
