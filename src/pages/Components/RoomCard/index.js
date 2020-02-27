@@ -6,6 +6,7 @@ import { Container } from "./styles";
 const RoomCard = ({ Rooms }) => {
   console.log(Rooms);
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(false);
   const [userName, setUserName] = useState("");
   const [roomName, setRoomName] = useState("");
   const [roomId, setRoomId] = useState("");
@@ -13,6 +14,10 @@ const RoomCard = ({ Rooms }) => {
   const inputEl = useRef(null);
 
   function goToRoom(e) {
+    if (userName === '') {
+      setError(true)
+      return;
+    }
     history.push({
       pathname: `/room/${roomName}`,
       state: { userName: userName, roomId: roomId }

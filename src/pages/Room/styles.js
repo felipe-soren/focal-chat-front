@@ -23,6 +23,7 @@ export const Container = styled.div`
     min-height: 50px;
     padding: 0 20px;
     font-size: 14px;
+    max-width: 50%;
   }
 
   .btn {
@@ -59,9 +60,13 @@ export const Container = styled.div`
   }
 
   @media only screen and (max-width: 600px) {
-  .messages, input {
-    max-width: 90%;
+  input {
+    max-width: 75%;
     max-height: 90%;
+  }
+  .btn {
+    height: 50px;
+    width: 50px;
   }
 }
 
