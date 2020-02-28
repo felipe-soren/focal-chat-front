@@ -26,6 +26,7 @@ export const Container = styled.div`
   }
 
   .room-card {
+    cursor: pointer;
     margin: 10px;
     width: 300px;
     height: 350px;
