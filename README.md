@@ -1,6 +1,6 @@
 # Focal Chat Web
 
-This project is a Web client for Focal chat, this project 
+This project is a Web client for Focal chat, this project was created using create-react-app
 
 ## Requirements
 
