@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.header`
   height: 50px;
@@ -7,9 +7,9 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.10);
-  -moz-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.10);
-  box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.10);
+  -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
 
   a {
     text-decoration: none;

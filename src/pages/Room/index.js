@@ -21,7 +21,6 @@ export default class Room extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     if (this.state.messageInput === "") return;
-    console.log(this.props.match.params.name, this.state.messageInput);
     this.socket.emit(
       "send-chat-message",
       this.props.location.state.roomId,

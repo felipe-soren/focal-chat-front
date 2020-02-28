@@ -4,7 +4,6 @@ import { useHistory } from "react-router-dom";
 import { Container } from "./styles";
 
 const RoomCard = ({ Rooms }) => {
-  console.log(Rooms);
   const [showModal, setShowModal] = useState(false);
   const [userName, setUserName] = useState("");
   const [roomName, setRoomName] = useState("");
@@ -13,7 +12,7 @@ const RoomCard = ({ Rooms }) => {
   const inputEl = useRef(null);
 
   function goToRoom(e) {
-    if (userName === '') {
+    if (userName === "") {
       return;
     }
     history.push({
@@ -42,8 +41,10 @@ const RoomCard = ({ Rooms }) => {
             </div>
             <form onSubmit={e => goToRoom(e)}>
               <h3>Digite seu nome para entrar no chat</h3>
-              <input type="text" onChange={e => setUserName(e.target.value)}
-              ref={inputEl}
+              <input
+                type="text"
+                onChange={e => setUserName(e.target.value)}
+                ref={inputEl}
               />
             </form>
             <div className="modal-footer">
@@ -54,16 +55,18 @@ const RoomCard = ({ Rooms }) => {
           </div>
         </div>
       ) : null}
-      <div class="grid-container">
+      <div className="grid-container">
         {Rooms.map(room => (
           <div
             className="room-card"
             key={room.id}
             id={room.id}
-            onClick={e => handleCardClick(room.name, room.id)}>
+            onClick={e => handleCardClick(room.name, room.id)}
+          >
             <div
               className="header"
-              style={{ backgroundImage: `url('${room.imageUrl}')` }}>
+              style={{ backgroundImage: `url('${room.imageUrl}')` }}
+            >
               <div className="opacity">
                 <p>Entrar</p>
               </div>
