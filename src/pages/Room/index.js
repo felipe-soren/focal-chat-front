@@ -48,6 +48,7 @@ export default class Room extends Component {
   }
 
   componentWillMount() {
+    // Prevent users without name
     if (this.props.location.state === undefined) {
       this.props.history.push("/");
       return;
